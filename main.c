@@ -12,23 +12,28 @@
 
 int main()
 {
-   printf("\nHello, World!\n");
+   printf("\tHello, World!\n");
 
    // read the text file
-   FILE *ptr_file;
-   char buf[50];
+   FILE *file;
+   char f_name[24];
+   char l_name[24];
+   int day;
+   int mo;
+   int yr;
 
-   ptr_file = fopen("contacts.txt", "r");
-   if (!ptr_file){
-   	return 1;
+   file = fopen("contacts.txt", "r");
+   if (file == 0){
+  	printf("\tfile not found...\n");
    }
 
-   while (fgets(buf, 50, ptr_file) != NULL){
-   	printf("%s\n", buf );
+   while (fscanf(file, "%s %s %d-%d-%d", &f_name, &l_name, &day, &mo, &yr) >1){
+   	printf("%s %s %d %d %d\n", f_name, l_name, day, mo, yr);
    }
-
-   fclose(ptr_file);
-
+   if (! feof(file)){
+   	printf("ERROR\n");
+   }
+   fclose(file);
 
    return 0;
 }
