@@ -12,6 +12,23 @@
 
 int main()
 {
-   printf("Hello, World!");
+   printf("\nHello, World!\n");
+
+   // read the text file
+   FILE *ptr_file;
+   char buf[50];
+
+   ptr_file = fopen("contacts.txt", "r");
+   if (!ptr_file){
+   	return 1;
+   }
+
+   while (fgets(buf, 50, ptr_file) != NULL){
+   	printf("%s\n", buf );
+   }
+
+   fclose(ptr_file);
+
+
    return 0;
 }
