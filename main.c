@@ -90,7 +90,7 @@ int main()
   	// filter and print ages
   	int k = 0;
   	for (k = 0; k < 15; k++){
-  		if ( ((c_list[k].c_date.d_yr) != NULL) && ((2018 - (c_list[k].c_date.d_yr) ) > 20) && ((2018 - (c_list[k].c_date.d_yr) ) < 100)){
+  		if ( ((c_list[k].c_date.d_yr) != NULL) && ((2018 - (c_list[k].c_date.d_yr) ) > 17) && ((2018 - (c_list[k].c_date.d_yr) ) < 25)){
   			printf("\t");
   			printf("name: %s", c_list[k].fName);
   			printf("\t\t");
