@@ -52,24 +52,13 @@ int main()
 
    int i = 0;
    while (fscanf(file, "%s %s %d-%d-%d", &f_name, &l_name, &day, &mo, &yr) >1){
-   	// put the text file data into the array of structures
+   	
    	printf("%s %s %d %d %d\n", f_name, l_name, day, mo, yr);
-   	// printf("%s %s %d %d %d\n", f_name, l_name, day, mo, yr);
 
-   	// strcpy(c_list[i].fName, f_name);
-   	// strcpy(c_list[i].lName, l_name);
-   	// memcpy(c_list[i].c_date.d_day, day, 2);
-   	// memcpy(c_list[i].c_date.d_mo, mo, 2);
-   	// memcpy(c_list[i].c_date.d_yr, yr, 2);
-
-
-   	// using loop below for each char element in the string names
-   	// c_list[i].fName = f_name;
-   	// c_list[i].lName = l_name;
+   	// put the text file data into the array of structures
    	c_list[i].c_date.d_day = day;
    	c_list[i].c_date.d_mo = mo;
    	c_list[i].c_date.d_yr = yr;
-
    	int j = 0;
    	for (j = 0; j < 15; j++){
    		c_list[i].fName[j] = f_name[j];
@@ -79,26 +68,26 @@ int main()
    	printf("\t");
    	printf(c_list[i].fName);
    	printf("\t");
-   	// printf(c_list[i].c_date.d_yr);
+   	printf("\n\tyear: %d",c_list[i].c_date.d_yr);
    	printf("\n");
 
-   	// printf("i:");
-   	// printf(i);
-   	// printf("\n");
-
+   	printf("loop: %d" , i);
+   	printf("\n");
    	// increment the counter, for the next array element
    	i = i + 1;
    }
+
    if (! feof(file)){
    	printf("ERROR\n");
    }
-   fclose(file);
+
+	fclose(file);
 
 	printf("Date is: ");
   	printf(__DATE__);
   	printf("\n");
 
-
+  	// filter and print ages
   	int k = 0;
   	// for (k = 0; k < 100; k++){
   	// 	if ( (c_list[k].c_date.d_yr - 2018) > 20 ){
